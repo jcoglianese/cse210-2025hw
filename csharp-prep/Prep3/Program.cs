@@ -12,7 +12,7 @@ class Program
         {
             Console.Write("What is your guess? ");
             string userGuess = Console.ReadLine();
-            int response = int.Parse(userGuess);
+            response = int.Parse(userGuess);
             if (response > magicNumber)
             {
                 Console.WriteLine("Lower");
@@ -24,7 +24,6 @@ class Program
             else if (response == magicNumber)
             {
                 Console.WriteLine("You guessed it!");
-                break;
             }
         } while (response != magicNumber);
 
