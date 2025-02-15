@@ -42,12 +42,9 @@ public class Scripture{
         if (File.Exists(filePath)){
             Console.WriteLine("Attempting to load scriptures...");
             Console.WriteLine($"File Path: {filePath}");
-            // Console.WriteLine("File contents:"); Run these lines to test the Load method
-            // Console.WriteLine(File.ReadAllText(filePath));
 
             string[] lines = File.ReadAllLines(filePath);
             foreach (string line in lines){
-                // Console.WriteLine($"Reading line: {line}"); Use this code for testing
                 try{
                     scriptures.Add(Scripture.FromString(line));
                 }
