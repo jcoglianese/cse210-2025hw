@@ -5,6 +5,7 @@ class Listing : Activities
     
 
     public Listing(){
+        // Inialize name and description of activity as well as a list of prompts
         _activityName = "Listing Activity";
         _description = "This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.";
         _prompts = new List<string>
@@ -16,6 +17,7 @@ class Listing : Activities
             "What has made you happy this month?",
             "What are some tender mercies this month?"
         };
+        // Create random variable
         _random = new Random();
     }
 

@@ -4,14 +4,16 @@ class Breath : Activities
 {
 
     public Breath(){
+        // Inialize name and description of activity
         _activityName = "Breathing Activity";
         _description = "This activity will help you relax by walking through breathing in and out slowly. Clear your mind and focus on your breathing.";
     }
-    
+
     public void BreathLoop(int duration){
         for (int i = 0; i < (duration / 10); i++){
             Console.WriteLine("\n");
 
+            // Breath in animation
             Console.Write("Breath in...4");
             Thread.Sleep(1000);
             Console.Write("\b4\b3"); 
@@ -22,6 +24,7 @@ class Breath : Activities
             Thread.Sleep(1000);
             Console.Write("\b1\b ");
 
+            // Breath out animation
             Console.Write("\nNow breath out...6");
             Thread.Sleep(1000);
             Console.Write("\b6\b5"); 

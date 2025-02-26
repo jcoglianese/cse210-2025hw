@@ -11,6 +11,12 @@ class Activities
     protected List<string> _prompts;
     protected Random _random;
 
+    // Start Activity will show standard welcome message for each activity
+    public void StartActivity(){
+        Console.WriteLine($"Welcome to the {_activityName}.\n\n{_description}\n");
+    }
+
+    // Set duration will have the user input how long they want to do the activity
     public int SetDuration(){
         Console.Write("How long, in seconds, would you like for your session? ");
         string input = Console.ReadLine();
@@ -28,20 +34,7 @@ class Activities
         }
     }
 
-    public void StartActivity(){
-        Console.WriteLine($"Welcome to the {_activityName}.\n\n{_description}\n");
-    }
-
-    public void EndActivity(){
-        Console.WriteLine("Well Done!!");
-        PauseAnimation();
-        Console.WriteLine("\n");
-        Console.WriteLine($"You have completed another {_duration} seconds of the {_activityName}");
-        PauseAnimation();
-        Console.Clear();
-
-    }
-
+    // Pause animation runs a little animation while the user waits
     public void PauseAnimation(){
         for (int i = 0; i < 3; i++){
             Console.Write("|");
@@ -60,8 +53,20 @@ class Activities
 
     }
 
-      protected string ChoosePrompt()
+    // Choose prompt will choose a prompt for the reflection and listing class but not the breath class
+    protected string ChoosePrompt()
     {
         return _prompts[_random.Next(_prompts.Count)];
+    }
+
+    // End Activity will display a standardized message for each activity
+    public void EndActivity(){
+        Console.WriteLine("Well Done!!");
+        PauseAnimation();
+        Console.WriteLine("\n");
+        Console.WriteLine($"You have completed another {_duration} seconds of the {_activityName}");
+        PauseAnimation();
+        Console.Clear();
+
     }
 }

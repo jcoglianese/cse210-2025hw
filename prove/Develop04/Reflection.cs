@@ -8,6 +8,7 @@ class Reflection : Activities
 
     public Reflection()
     {
+        // Inialize name and description of activity as well as a list of prompts
         _activityName = "Reflecting Activity";
         _description = "This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.";
 
@@ -19,13 +20,14 @@ class Reflection : Activities
             "Think about a difficult decision you made.",
             "Remember a time when you felt truly happy."
         };
-
+        // Create a dictionary for the questions
         _themedQuestions = new Dictionary<string, Queue<string>>();
         _random = new Random();
 
         InitializeQuestions();
     }
 
+    // Initailize questions will make the dictionary for the prompts. This allows the questions be more specific for each prompt. 
     private void InitializeQuestions()
     {
         Dictionary<string, List<string>> questionsList = new Dictionary<string, List<string>>
@@ -52,12 +54,14 @@ class Reflection : Activities
             }
         };
 
+        // Make a queue for the questions with in the dictionary
         foreach (var entry in questionsList)
         {
             _themedQuestions[entry.Key] = ShuffleQueue(entry.Value);
         }
     }
 
+    // Run a loop for the reflection activity
     public void ReflectionLoop(int duration)
     {
         Console.WriteLine("\nConsider the following prompt:\n");
@@ -75,13 +79,12 @@ class Reflection : Activities
             Console.WriteLine($"\n-> {question}");
             for (int elapsedTime = 0; elapsedTime < duration; elapsedTime += 20){
                 PauseAnimation();
-            }
-             
+            }  
         }
-
         Console.WriteLine("\nGreat job reflecting! Take a moment to appreciate your thoughts.\n");
     }
 
+    // Choose question will know which question to ask and if the questions have ran out.
     private string ChooseQuestion(string prompt)
     {
         if (!_themedQuestions.ContainsKey(prompt) || _themedQuestions[prompt].Count == 0)
@@ -92,6 +95,7 @@ class Reflection : Activities
         return _themedQuestions[prompt].Dequeue();
     }
 
+    // This function shuffles the queue of the questions
     private Queue<string> ShuffleQueue(List<string> questions)
     {
         List<string> shuffledList = new List<string>(questions);
@@ -105,6 +109,7 @@ class Reflection : Activities
         return new Queue<string>(shuffledList);
     }
 
+    // Once the questions have been shuffled this method will return the list
     private List<string> GetQuestionList(string prompt)
     {
         return _themedQuestions.ContainsKey(prompt) 
