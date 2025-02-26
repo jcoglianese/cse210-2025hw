@@ -23,6 +23,8 @@ class Activities
         if (int.TryParse(input, out _duration) && _duration > 0)
         {
         Console.Clear();
+        // Write get read. Did it here so it wouldn't do it everytime the pause animation was run
+        
         Console.WriteLine("Get ready...");
         PauseAnimation();
         return _duration;
