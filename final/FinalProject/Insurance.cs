@@ -3,10 +3,10 @@ using System.Dynamic;
 using System.Runtime.InteropServices;
 
 public class Insurance{
-    protected string _coverageType {get;set;}
-    protected double _costPerAcre {get; set;}
-    protected double _totalCost {get; set;}
-    protected string _location {get; set;}
+    protected string _coverageType; 
+    protected double _costPerAcre; 
+    protected double _totalCost; 
+    protected string _location; 
 
     public Insurance(string location){
         _location = location;

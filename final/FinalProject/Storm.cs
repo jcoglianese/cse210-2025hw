@@ -1,9 +1,9 @@
 using System.Dynamic;
 
 public class Storm{
-    protected string _name {get; set;}
-    protected double _threatLevel {get;set;}
-    protected string _location {get; set;}
+    protected string _name; 
+    protected double _threatLevel; 
+    protected string _location;
 
     public Storm(string location){
         _location = location;
