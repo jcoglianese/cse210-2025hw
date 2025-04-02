@@ -18,7 +18,7 @@ public class Tornado : Storm {
             //Low Threat
             case "New England":
             case "NY, PA, DE":
-            case "Mid-Atlantic":
+            case "Mid-Atlantic (NJ, MD, VA)":
             case "Southeast":
             case "Great Lakes":
             case "Mountain":
@@ -28,7 +28,7 @@ public class Tornado : Storm {
             case "West Coast":
                 _threatLevel = new Random().Next(0,10);
                 return _threatLevel;
-            default: return 50;
+            default: return 5000; //Absurd Number that will tell you the program isn't working properly
         }
     }
 }

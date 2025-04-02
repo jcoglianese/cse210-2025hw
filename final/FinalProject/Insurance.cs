@@ -13,7 +13,7 @@ public class Insurance{
     }
 
     public virtual double GetCostPerAcre(string region){
-        return 20;
+        return 5000; //Absurd Number that will tell you the program isn't working properly
     }
 
     public double CalculateCost(double acres, double costPerAcre){

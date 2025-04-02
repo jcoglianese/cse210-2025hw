@@ -15,7 +15,7 @@ public class Hail : Storm {
             //Moderate Threat
             case "New England":
             case "NY, PA, DE":
-            case "Mid-Atlantic":
+            case "Mid-Atlantic (NJ, MD, VA)":
             case "Great Lakes":
             case "Midwest":
                 _threatLevel = new Random().Next(40,60);
@@ -25,7 +25,7 @@ public class Hail : Storm {
             case "West Coast":
                 _threatLevel = new Random().Next(20,40);
                 return _threatLevel;
-            default: return 50;
+            default: return 5000; //Absurd Number that will tell you the program isn't working properly
         }
     
     }

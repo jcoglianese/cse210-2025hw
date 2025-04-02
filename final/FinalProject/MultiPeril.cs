@@ -25,7 +25,7 @@ public class MultiPeril : Insurance{
                 _costPerAcre = new Random().Next(40,65);
                 return _costPerAcre;
             //Moderate Cost
-            case "Mid-Atlantic":
+            case "Mid-Atlantic (NJ, MD, VA)":
                 _costPerAcre = new Random().Next(35,55);
                 return _costPerAcre;
             //Moderate Cost
@@ -42,10 +42,7 @@ public class MultiPeril : Insurance{
             case "West Coast":
                 _costPerAcre = new Random().Next(15,20);
                 return _costPerAcre;
-            
-            
-            
-            default: return 35;
+            default: return 5000; //Absurd Number that will tell you the program isn't working properly
         }
     }
     

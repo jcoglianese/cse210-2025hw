@@ -27,7 +27,7 @@ public class TornadoIns : Insurance{
             //Low Cost
             case "New England":
             case "NY, PA, DE":
-            case "Mid-Atlantic":
+            case "Mid-Atlantic (NJ, MD, VA)":
                 _costPerAcre = new Random().Next(15,22);
                 return _costPerAcre;
             // Very Low Cost
@@ -35,7 +35,7 @@ public class TornadoIns : Insurance{
             case "West Coast":
                 _costPerAcre = new Random().Next(10,18);
                 return _costPerAcre;
-            default: return 20;
+            default: return 5000; //Absurd Number that will tell you the program isn't working properly
         }
     }
     

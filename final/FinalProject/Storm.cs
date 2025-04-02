@@ -10,7 +10,7 @@ public class Storm{
     }
 
     public virtual double GetThreatLevel(string region){
-        return 50;
+        return 5000; //Absurd Number that will tell you the program isn't working properly
     }
     
     public virtual void DisplayThreat(string region){

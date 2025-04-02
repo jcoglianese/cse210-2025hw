@@ -11,7 +11,7 @@ public class HurricaneIns : Insurance{
                 _costPerAcre = new Random().Next(40,60);
                 return _costPerAcre;
             //High Cost
-            case "Mid-Atlantic":
+            case "Mid-Atlantic (NJ, MD, VA)":
             case "South Central":
                 _costPerAcre = new Random().Next(30,50);
                 return _costPerAcre;
@@ -31,7 +31,7 @@ public class HurricaneIns : Insurance{
             case "West Coast":
                 _costPerAcre = new Random().Next(10,20);
                 return _costPerAcre;
-            default: return 20;
+            default: return 5000; //Absurd Number that will tell you the program isn't working properly
         }
     }
      

@@ -17,7 +17,7 @@ public class Hurricane : Storm {
                 _threatLevel = new Random().Next(20,40);
                 return _threatLevel;
             //Rare Threat
-            case "Mid-Atlantic":
+            case "Mid-Atlantic (NJ, MD, VA)":
             case "South Central":
                 _threatLevel = new Random().Next(10,20);
                 return _threatLevel;
@@ -27,7 +27,7 @@ public class Hurricane : Storm {
             case "Central Plains":
                 _threatLevel = new Random().Next(0,10);
                 return _threatLevel;
-            default: return 50;
+            default: return 5000; //Absurd Number that will tell you the program isn't working properly
         }
     }
 }

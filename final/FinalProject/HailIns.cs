@@ -19,7 +19,7 @@ public class HailIns : Insurance{
             //Moderate Cost
             case "New England":
             case "NY, PA, DE":
-            case "Mid-Atlantic":
+            case "Mid-Atlantic (NJ, MD, VA)":
             case "Great Lakes":
             case "Midwest":
                 _costPerAcre = new Random().Next(15,22);
@@ -29,7 +29,7 @@ public class HailIns : Insurance{
             case "West Coast":
                 _costPerAcre = new Random().Next(10,18);
                 return _costPerAcre;
-            default: return 20;
+            default: return 5000; //Absurd Number that will tell you the program isn't working properly
         }
     }
      
